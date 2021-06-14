@@ -1,9 +1,9 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Collaborateur index{% endblock %}
+{% block title %}Listing collaborateur{% endblock %}
 
 {% block body %}
-    <h1>Collaborateur index</h1>
+    <h1>Liste des collaborateurs</h1>
 
     <table class="table">
         <thead>
@@ -43,11 +43,11 @@
             </tr>
         {% else %}
             <tr>
-                <td colspan="12">no records found</td>
+                <td colspan="12">Aucun collaborateur</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <a href="{{ path('collaborateur_new') }}">Create new</a>
+    <a href="{{ path('collaborateur_new') }}">Créer un nouveau collaborateur</a>
 {% endblock %}

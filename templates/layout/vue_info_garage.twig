@@ -1,0 +1,23 @@
+{% set email = contenu.email %} 
+			    {% set adresse = contenu.adresse %} 
+				{% set telephone = contenu.telephone %}
+
+<div class="col-lg-6 col-md-12">
+    <h1>Nos informations de contact</h1>
+    <form class="" method="post" action="" role="form">
+        <div class="col-md-12">
+            <div class="form-group">
+                <label>Adresse : </label>{{ adresse }}
+
+                
+
+            </div>
+            <div class="form-group">
+                <label for="">Téléphone :</label>{{ telephone }}
+            </div>
+            <div class="form-group">
+                <label for="">Mail : </label>{{ email }}
+            </div>
+        </div>
+    </form>
+</div>

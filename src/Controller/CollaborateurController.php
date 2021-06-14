@@ -9,6 +9,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+//use Symfony\Component\Form\Extension\Core\Type\DateType;
 
 /**
  * @Route("/collaborateur")
@@ -39,6 +40,8 @@ class CollaborateurController extends AbstractController
             $entityManager->persist($collaborateur);
             $entityManager->flush();
 
+            $this->addFlash('success', 'Le collaborateur a bien été ajouté');
+            
             return $this->redirectToRoute('collaborateur_index');
         }
 
@@ -69,6 +72,8 @@ class CollaborateurController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
+            $this->addFlash('success', 'Le collaborateur a bien été modifié');
+            
             return $this->redirectToRoute('collaborateur_index');
         }
 
@@ -89,6 +94,8 @@ class CollaborateurController extends AbstractController
             $entityManager->flush();
         }
 
+        $this->addFlash('success', 'Le collaborateur a bien été supprimé');
+        
         return $this->redirectToRoute('collaborateur_index');
     }
 }

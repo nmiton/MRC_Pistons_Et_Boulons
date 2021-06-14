@@ -1,9 +1,9 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Collaborateur{% endblock %}
+{% block title %}Listing collaborateur{% endblock %}
 
 {% block body %}
-    <h1>Collaborateur</h1>
+    <h1>Liste des collaborateurs</h1>
 
     <table class="table">
         <tbody>
@@ -54,9 +54,9 @@
         </tbody>
     </table>
 
-    <a href="{{ path('collaborateur_index') }}">back to list</a>
+    <a href="{{ path('collaborateur_index') }}">Retour</a>
 
-    <a href="{{ path('collaborateur_edit', {'id': collaborateur.id}) }}">edit</a>
+    <a href="{{ path('collaborateur_edit', {'id': collaborateur.id}) }}">Modifier</a>
 
     {{ include('collaborateur/_delete_form.html.twig') }}
 {% endblock %}
