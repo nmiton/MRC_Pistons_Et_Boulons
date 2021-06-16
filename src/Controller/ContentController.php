@@ -17,18 +17,29 @@ use function PHPUnit\Framework\equalTo;
  */
 class ContentController extends AbstractController
 {
-
      /**
      * @Route("/", name="home", methods={"GET"})
      */
     public function home(ContentRepository $contentRepository): Response
     {   
-
+        // $test = $contentRepository->findByPosition('texte');
+        // $tab  = [];
+        // foreach ($test as $t){            
+        //     array_push($tab,
+        //         array(
+        //             "id"=> $t->getId(),
+        //             "texte"=> $t->getText(),
+        //             "position"=>$t->getPosition(),
+        //         )
+        //         );
+        // } 
+        // var_dump($tab);
         return $this->render('content/home.html.twig', [
          
             'controller_name' => 'ContentController',
-            'contenu_contact' => $contentRepository->findByPosition('contact'),
+            // 'contenu_contact' => $contentRepository->findByPosition('contact'),
             'contenu_accueil' => $contentRepository->findByPosition('texte'),
+            
         ]);
     }
 

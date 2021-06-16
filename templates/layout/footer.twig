@@ -2,11 +2,11 @@
 	<footer id="footer" class="container">
 		<div class="row">
 
-		{% set  horaires = "" %}
-		{% set  adresse = "" %}
-		{% set  telephone = "" %}	
+		{% set  horaires = appConfig.getGarageHoraires() %}
+		{% set  adresse = appConfig.getGarageAdresse() %}
+		{% set  telephone = appConfig.getGarageTelephone() %}	
 
-			{% for contenu in contenuFooter %}
+			{# {% for contenu in contenuFooter %}
 				{% set  position = contenu.position %}
 
 					{% if position == 'contact_horaires' %}
@@ -23,7 +23,9 @@
 					
 					{% endif %}
 
-			{% endfor %}
+			{% endfor %} #}
+
+		
 
 			<div
 				class="col-lg-4 col-md-4 col-sm-12">
@@ -33,18 +35,19 @@
 					{# Condition d'affichage #}
 					{% if horaires is null %}
 						<div class="container mt-1">
-							<p class="maintenance">Non renseignées</p>
+							<p class="maintenance">Non renseignées </p>
+
 						</div>
 
-					{% else %}
+					{% else %} 
 
 						{# on découpe notre string horaires a partir du caractère ';' #}
 						{# on obtient un tableau avec une itération correspond a un jour #}
-						 {% set horaires_découpées= horaires|split(';') %}
+						 {% set horaires_decoupees= horaires|split(';') %}
 
 							<ul class="style2"> 
 							{# on boucle sur notre tableau horaires #}
-							{% for horaires_jour in horaires_découpées %}
+							{% for horaires_jour in horaires_decoupees %}
 								{# on affiche l'horaire #}
 								<li>
 									{{horaires_jour}}
@@ -96,9 +99,9 @@
 								{{adresse}}
 							<br/>
 
-						{% endfor %}
+								{% endfor %}
 						{% endif %}
-							{% if telephone is null %}
+						{% if telephone is null %}
 								<div class="container"> <p class="maintenance">Téléphone non renseigné</p>
 							</div>
 						{% else %}
@@ -106,7 +109,6 @@
 							<a href="tel:{{telephone}}">
 								{{telephone}}</a> 
 						{% endif %} 
-
 					</p>
 				</section>
 			</div>
@@ -127,3 +129,4 @@
 		</div>
 
 	</footer>
+ 

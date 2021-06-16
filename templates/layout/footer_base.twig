@@ -2,7 +2,9 @@
 	<footer id="footer" class="container">
 		<div class="row">
 
-	
+			{% set  horaires = appConfig.getGarageHoraires() %}
+			{% set  adresse = appConfig.getGarageAdresse() %}
+			{% set  telephone = appConfig.getGarageTelephone() %}
 
 			<div
 				class="col-lg-4 col-md-4 col-sm-12">
@@ -10,13 +12,16 @@
 				<section class="widget links">
 					<h3>Nos horaires :</h3>
 					{# Condition d'affichage #}
-					
-						<div class="container mt-1">
-							<p class="maintenance">Non renseignées</p>
-						</div>
 
+					{% set  horaires = appConfig.getGarageHoraires() %}
 
-					
+					{% for horaire in horaires %}
+						{{ horaire }}
+					{% endfor %}
+
+					{# <div class="container mt-1">
+						<p class="maintenance">Non renseignées</p>
+					</div> #}
 
 
 				</section>
@@ -45,17 +50,17 @@
 					<p>
 						<strong>PISTONS & BOULONS</strong><br/>
 
-						
-							<div class="container">
-								<p class="maintenance">Adresse non renseignée</p>
-							</div>
-					
-			
-						
-								<div class="container"> <p class="maintenance">Téléphone non renseigné</p>
-							</div>
-					
-				
+
+						<div class="container">
+							<p class="maintenance">Adresse non renseignée</p>
+						</div>
+
+
+						<div class="container">
+							<p class="maintenance">Téléphone non renseigné</p>
+						</div>
+
+
 					</p>
 				</section>
 			</div>

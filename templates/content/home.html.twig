@@ -19,11 +19,11 @@
 
 			{% if position == 'texte_presentation' %}
 
-			{% set  texte_presentation = contenu.text %}
+			{% set  texte_presentation = contenu.texte %}
 
 		{% elseif position == 'texte_affiliation' %}
 
-			{% set  texte_ad = contenu.text %}
+			{% set  texte_ad = contenu.texte %}
 
 		{% endif %}
 
@@ -38,9 +38,6 @@
 	{% include 'layout/texte_presentation.twig' with {'contenuPresentation' : texte_presentation} %}
 
 	{% include 'layout/texte_ad.twig' with {'contenuAffiliation' : texte_ad} %}
-
-
-	{% include 'layout/footer.twig' with {'contenuFooter' : contenu_contact} %}
 
 
 {% endblock %}
