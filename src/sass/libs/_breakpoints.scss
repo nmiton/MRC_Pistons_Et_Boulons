@@ -41,7 +41,11 @@
 				}
 
 			// Less than or equal.
+<<<<<<< HEAD
 				@else if (str-slice($query, 0, 2) == '<=') {
+=======
+				@elseif (str-slice($query, 0, 2) == '<=') {
+>>>>>>> b8298c76373e225bbfc37cfe11b22722c9423982
 
 					$op: 'lte';
 					$breakpoint: str-slice($query, 3);
@@ -49,7 +53,11 @@
 				}
 
 			// Greater than.
+<<<<<<< HEAD
 				@else if (str-slice($query, 0, 1) == '>') {
+=======
+				@elseif (str-slice($query, 0, 1) == '>') {
+>>>>>>> b8298c76373e225bbfc37cfe11b22722c9423982
 
 					$op: 'gt';
 					$breakpoint: str-slice($query, 2);
@@ -57,7 +65,11 @@
 				}
 
 			// Less than.
+<<<<<<< HEAD
 				@else if (str-slice($query, 0, 1) == '<') {
+=======
+				@elseif (str-slice($query, 0, 1) == '<') {
+>>>>>>> b8298c76373e225bbfc37cfe11b22722c9423982
 
 					$op: 'lt';
 					$breakpoint: str-slice($query, 2);
@@ -65,7 +77,11 @@
 				}
 
 			// Not.
+<<<<<<< HEAD
 				@else if (str-slice($query, 0, 1) == '!') {
+=======
+				@elseif (str-slice($query, 0, 1) == '!') {
+>>>>>>> b8298c76373e225bbfc37cfe11b22722c9423982
 
 					$op: 'not';
 					$breakpoint: str-slice($query, 2);
@@ -100,22 +116,38 @@
 									}
 
 								// Less than or equal (<= y)
+<<<<<<< HEAD
 									@else if ($op == 'lte') {
+=======
+									@elseif ($op == 'lte') {
+>>>>>>> b8298c76373e225bbfc37cfe11b22722c9423982
 										$media: 'screen and (max-width: ' + $y + ')';
 									}
 
 								// Greater than (> y)
+<<<<<<< HEAD
 									@else if ($op == 'gt') {
+=======
+									@elseif ($op == 'gt') {
+>>>>>>> b8298c76373e225bbfc37cfe11b22722c9423982
 										$media: 'screen and (min-width: ' + ($y + 1) + ')';
 									}
 
 								// Less than (< 0 / invalid)
+<<<<<<< HEAD
 									@else if ($op == 'lt') {
+=======
+									@elseif ($op == 'lt') {
+>>>>>>> b8298c76373e225bbfc37cfe11b22722c9423982
 										$media: 'screen and (max-width: -1px)';
 									}
 
 								// Not (> y)
+<<<<<<< HEAD
 									@else if ($op == 'not') {
+=======
+									@elseif ($op == 'not') {
+>>>>>>> b8298c76373e225bbfc37cfe11b22722c9423982
 										$media: 'screen and (min-width: ' + ($y + 1) + ')';
 									}
 
@@ -135,22 +167,38 @@
 									}
 
 								// Less than or equal (<= inf / anything)
+<<<<<<< HEAD
 									@else if ($op == 'lte') {
+=======
+									@elseif ($op == 'lte') {
+>>>>>>> b8298c76373e225bbfc37cfe11b22722c9423982
 										$media: 'screen';
 									}
 
 								// Greater than (> inf / invalid)
+<<<<<<< HEAD
 									@else if ($op == 'gt') {
+=======
+									@elseif ($op == 'gt') {
+>>>>>>> b8298c76373e225bbfc37cfe11b22722c9423982
 										$media: 'screen and (max-width: -1px)';
 									}
 
 								// Less than (< x)
+<<<<<<< HEAD
 									@else if ($op == 'lt') {
+=======
+									@elseif ($op == 'lt') {
+>>>>>>> b8298c76373e225bbfc37cfe11b22722c9423982
 										$media: 'screen and (max-width: ' + ($x - 1) + ')';
 									}
 
 								// Not (< x)
+<<<<<<< HEAD
 									@else if ($op == 'not') {
+=======
+									@elseif ($op == 'not') {
+>>>>>>> b8298c76373e225bbfc37cfe11b22722c9423982
 										$media: 'screen and (max-width: ' + ($x - 1) + ')';
 									}
 
@@ -170,22 +218,38 @@
 									}
 
 								// Less than or equal (<= y)
+<<<<<<< HEAD
 									@else if ($op == 'lte') {
+=======
+									@elseif ($op == 'lte') {
+>>>>>>> b8298c76373e225bbfc37cfe11b22722c9423982
 										$media: 'screen and (max-width: ' + $y + ')';
 									}
 
 								// Greater than (> y)
+<<<<<<< HEAD
 									@else if ($op == 'gt') {
+=======
+									@elseif ($op == 'gt') {
+>>>>>>> b8298c76373e225bbfc37cfe11b22722c9423982
 										$media: 'screen and (min-width: ' + ($y + 1) + ')';
 									}
 
 								// Less than (< x)
+<<<<<<< HEAD
 									@else if ($op == 'lt') {
+=======
+									@elseif ($op == 'lt') {
+>>>>>>> b8298c76373e225bbfc37cfe11b22722c9423982
 										$media: 'screen and (max-width: ' + ($x - 1) + ')';
 									}
 
 								// Not (< x and > y)
+<<<<<<< HEAD
 									@else if ($op == 'not') {
+=======
+									@elseif ($op == 'not') {
+>>>>>>> b8298c76373e225bbfc37cfe11b22722c9423982
 										$media: 'screen and (max-width: ' + ($x - 1) + '), screen and (min-width: ' + ($y + 1) + ')';
 									}
 

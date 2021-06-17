@@ -61,4 +61,8 @@
 					visibleClass: 'navPanel-visible'
 				});
 
+<<<<<<< HEAD
 })(jQuery);
+=======
+})(jQuery);
+>>>>>>> b8298c76373e225bbfc37cfe11b22722c9423982

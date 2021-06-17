@@ -35,7 +35,11 @@
                 </fieldset>
             </form>
         </div>
+<<<<<<< HEAD
         <div class="col-lg-3"></div>
+=======
+        <div class="col-lg- 3"></div>
+>>>>>>> b8298c76373e225bbfc37cfe11b22722c9423982
         
     </div>
 </div>

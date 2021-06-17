@@ -362,7 +362,11 @@
 			}
 
 		// Expand just the value?
+<<<<<<< HEAD
 			@else if $expandValue {
+=======
+			@elseif $expandValue {
+>>>>>>> b8298c76373e225bbfc37cfe11b22722c9423982
 			    @each $vendor in $vendor-prefixes {
 			        #{$property}: #{str-replace-all($value, '-prefix-', $vendor)};
 			    }

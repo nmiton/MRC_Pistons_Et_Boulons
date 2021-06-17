@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {% extends 'layout.twig' %}
 
 {% block titre %}Connexion{% endblock %}
@@ -15,3 +16,20 @@
 {% include 'footer.twig' with {"contenu" : contenuContact }%}
 
 {% endblock %}
+=======
+{% extends 'base.html.twig' %}
+
+{% block title %}Connexion{% endblock %}
+
+{% block body %}
+
+
+
+<div id="connexion-wrapper">
+
+{% include "layout/form_connexion.php" %}
+
+</div>
+
+{% endblock %}
+>>>>>>> b8298c76373e225bbfc37cfe11b22722c9423982

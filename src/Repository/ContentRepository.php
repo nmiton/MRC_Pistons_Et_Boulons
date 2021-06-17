@@ -19,32 +19,40 @@ class ContentRepository extends ServiceEntityRepository
         parent::__construct($registry, Content::class);
     }
 
-    // /**
-    //  * @return Content[] Returns an array of Content objects
-    //  */
-    /*
-    public function findByExampleField($value)
-    {
-        return $this->createQueryBuilder('c')
-            ->andWhere('c.exampleField = :val')
-            ->setParameter('val', $value)
-            ->orderBy('c.id', 'ASC')
-            ->setMaxResults(10)
-            ->getQuery()
-            ->getResult()
-        ;
-    }
-    */
+    /**
+     * @param $value : correspond au champs Position de la table CONTENT
+     * Cette fonction permet de récuperer tous les enregistrements sur la table CONTENT avec comme condition
+     * que la position de l'enregistrement correspond (LIKE) au paramètre placé en entrée.
+     * (on trie par ordre croissant sur l'id)
+     * @return Array[] : correspond au tableau des enregistrements de type Content trouvé en fonction du param $value
+     */
 
-    /*
-    public function findOneBySomeField($value): ?Content
+    public function findByPosition($value)
     {
         return $this->createQueryBuilder('c')
-            ->andWhere('c.exampleField = :val')
+            ->andWhere('c.position LIKE :val')
+            ->setParameter('val', $value.'%')
+            ->orderBy('c.id', 'ASC')
+            ->getQuery()
+            ->getResult();
+    }
+
+ 
+
+     /**
+     * @param $value : correspond au champs Position de la table CONTENT
+     * Cette fonction permet de récuperer l'enregistrement sur la table CONTENT avec comme condition
+     * que la position de l'enregistrement est équivalente au paramètre placé en entrée
+     * @return Array[] : correspond au tableau de l'enregistrement avec comme position $value
+     */
+    public function findOneByPosition($value)
+    {
+        return $this->createQueryBuilder('c')
+            ->andWhere('c.position = :val')
             ->setParameter('val', $value)
             ->getQuery()
             ->getOneOrNullResult()
         ;
     }
-    */
+    
 }

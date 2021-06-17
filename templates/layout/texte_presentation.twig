@@ -6,15 +6,38 @@
 				<div id="row">
 					<div class="col-12">
 						<h2>Texte présentation modifiable entreprise </h2>
+<<<<<<< HEAD
 						
 						<p> {{ texte }}</p>
 						
 
+=======
+								{# Condition d'affichage #}
+							{% if contenuPresentation is null %}
+							<div class="container mt-5 mb-5">
+								<div class="row gtr-200">
+									<div class="col-12 col-12-medium imp-medium text-center ">
+
+										<p class="maintenance mt-5">Section en cours de maintenance</p>
+
+									</div>
+								</div>
+							</div>
+						{% else %}
+							
+							<p>{{ contenuPresentation }}</p>
+
+						{% endif %}
+>>>>>>> b8298c76373e225bbfc37cfe11b22722c9423982
 					</div>
 				</div>
 			</div>
 			<div class="bonton_contact col text-center">
+<<<<<<< HEAD
 				<a href="../index.php?p=contact" class="button">Nous contacter</a>
+=======
+				<a href="{{path("contact")}}" class="button">Nous contacter</a>
+>>>>>>> b8298c76373e225bbfc37cfe11b22722c9423982
 			</div>
 		</div>
 	</div>

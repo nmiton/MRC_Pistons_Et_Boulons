@@ -2,14 +2,21 @@
 <div id="header-wrapper">
 	<header id="header" class="container">
 
+<<<<<<< HEAD
 		<a id="logo" href="index.php?p=accueil">
 			<img src="../public/css/images/logo.png" alt="" class="logoDesktop"/>
 			<img src="../public/css/images/libelle.png" alt="" class="libelleDesktop"/>
+=======
+		<a id="logo" href="{{path("home")}}">
+			<img src="{{ asset('images/logo.png') }}" alt="" class="logoDesktop"/>
+			<img src="{{ asset('images/libelle.png') }}" alt="" class="libelleDesktop"/>
+>>>>>>> b8298c76373e225bbfc37cfe11b22722c9423982
 		</a>
 
 
 		<nav id="nav">
 			<ul id="menu">
+<<<<<<< HEAD
 
 			
                 {# <input type="texte" id="pageActive" hidden value="{{pageActive}}"/> #}
@@ -39,12 +46,42 @@
 
 				<li class="current">
 					<a class="" href="../index.php?p=connexion">Connexion</a>
+=======
+				<li>
+					<a class="" href="{{path("home")}}">Accueil</a>
+				</li>
+				<li>
+					<a class="" href="{{path("nos_prestations")}}">Prestations</a>
+				</li>
+				
+				{# <li>
+					<a  class="" href="#">Gestion</a>
+					<ul>
+						<li><a href="#">Nos clients</a></li>
+						<li><a href="#">Mes collaborateurs</a></li>
+						<li><a href="{{path("prestation_index")}}">Nos prestations</a></li>
+						<li><a href="{{path("content_index")}}">Contenu du site</a></li>
+						<li><a href="#">Dernières connexions</a></li>
+						<li><a href="#">Mon compte</a></li>
+					</ul>
+				</li> #}
+
+				<li>
+					<a class="" href="{{path("contact")}}">Contact</a>
+				</li>
+				{# <li class="">
+						<a href="{{path("contact")}}">Agenda</a>
+					</li> #}
+				<li class="current">
+					<a class="" href="{{path("connexion")}}">Connexion</a>
+>>>>>>> b8298c76373e225bbfc37cfe11b22722c9423982
 				</li>
 			</ul>
 		</nav>
 	</header>
 </div>
 
+<<<<<<< HEAD
 <script>
 	const hiddenInput = document.getElementById('pageActive')
     const pageActive = hiddenInput.value
@@ -54,6 +91,15 @@ const lis = document.querySelectorAll('li');
 
 lis.forEach((li) => {
  
+=======
+{# <script>
+	const hiddenInput = document.getElementById('pageActive')
+    const pageActive = hiddenInput.value
+	const lis = document.querySelectorAll('li');
+
+lis.forEach((li) => {
+
+>>>>>>> b8298c76373e225bbfc37cfe11b22722c9423982
     const link = li.getElementsByTagName("a");
 
     var menu = link[0].innerHTML
@@ -66,5 +112,9 @@ lis.forEach((li) => {
     }
     
 });
+<<<<<<< HEAD
 
 </script>
+=======
+</script> #}
+>>>>>>> b8298c76373e225bbfc37cfe11b22722c9423982

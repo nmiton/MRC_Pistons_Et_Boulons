@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {% extends 'layout.twig' %}
 
 {% block titre %}Contact{% endblock %}
@@ -5,6 +6,36 @@
 {% block contenu %}
 
 {% include 'header.twig' with {"pageActive" : page }%}
+=======
+{% extends 'base.html.twig' %}
+
+{% block title %}Contact{% endblock %}
+
+{% block body %}
+
+{% set  contact_adresse = "" %}
+{% set  contact_telephone = "" %}
+{% set  contact_email = "" %}
+	
+{% for contenu in contenu_contact %}
+    {% set  position = contenu.position %}
+
+        {% if position == 'contact_adresse' %}
+           
+            {% set  contact_adresse = contenu.text %}
+        
+        {% elseif position == 'contact_telephone' %}
+      
+            {% set  contact_telephone = contenu.text %}
+
+		{% elseif position == 'contact_email' %}
+      
+            {% set  contact_email = contenu.text %}
+          
+        {% endif %}
+
+{% endfor %}
+>>>>>>> b8298c76373e225bbfc37cfe11b22722c9423982
 
 	<div id="contact-wrapper">
 		<div class="container">
@@ -17,15 +48,25 @@
 			<div class="row mt-3">
 
 				
+<<<<<<< HEAD
 				{% include 'vues/vue_info_garage.twig' with {"contenu" : contenuContact }%}
 
 				{% include 'form_contact.php' %}
+=======
+				{% include 'layout/vue_info_garage.twig' with{ 'adresse' : contact_adresse , 'telephone' : contact_telephone , 'email': contact_email }%}
+
+				{% include 'layout/form_contact.php' %}
+>>>>>>> b8298c76373e225bbfc37cfe11b22722c9423982
 
 			</div>
 		</div>
 	</div>
+<<<<<<< HEAD
 
 	{% include 'footer.twig' with {"contenu" : contenuContact }%}
 
 
 {% endblock %}
+=======
+{% endblock %}
+>>>>>>> b8298c76373e225bbfc37cfe11b22722c9423982

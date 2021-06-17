@@ -4,7 +4,11 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
 		<title>
+<<<<<<< HEAD
 			{% block title %}Bienvenue{% endblock %}
+=======
+			{% block title %}{% endblock %}
+>>>>>>> b8298c76373e225bbfc37cfe11b22722c9423982
 		</title>
 
 
@@ -19,6 +23,7 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 
 		<!-- SASS compilé -->
+<<<<<<< HEAD
 		<link rel="stylesheet" href="{{ asset('css/style.min.css') }}"/>
 		{# <link rel="stylesheet" href="{{ asset('../public/css/style.min.css') }}"/> #}
 
@@ -41,10 +46,29 @@
 	<body class="is-preload homepage">
 
 		{# <div> #}
+=======
+		<link
+		rel="stylesheet" href="{{ asset('css/style.min.css') }}"/>
+
+
+		<!-- Scripts JS -->
+		<script src={{ asset('js/jquery.min.js') }} defer></script>
+		<script src={{asset('js/jquery.dropotron.min.js') }} defer></script>
+		<script src={{asset('/js/browser.min.js') }} defer></script>
+		<script src={{asset('js/breakpoints.min.js') }} defer></script>
+		<script src={{asset('../js/util.js') }} defer></script>
+		<script src={{asset('../js/main_tp.js') }} defer></script>
+
+	</head>
+	<body class="is-preload homepage">
+
+		
+>>>>>>> b8298c76373e225bbfc37cfe11b22722c9423982
 	
 
 			{% include 'layout/header.twig' %}
 
+<<<<<<< HEAD
 				{% for message in app.flashes('success') %}
             		<div class="alert alert-success">
                 		{{message}}
@@ -69,3 +93,23 @@
 		{# </div> #}
 	</body>
 </html>
+=======
+			{% for message in app.flashes('success') %}
+			<div class="alert alert-success">
+				{{message}}
+			</div>
+			{% endfor %}
+
+			<div id="page-wrapper">
+			
+			{% block body %}
+			
+			{% endblock %}
+
+			</div>
+
+			{% include 'layout/footer.twig' %}
+
+	</body>
+</html>
+>>>>>>> b8298c76373e225bbfc37cfe11b22722c9423982

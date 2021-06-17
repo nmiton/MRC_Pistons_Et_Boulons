@@ -20,38 +20,72 @@ class Content
     /**
      * @ORM\Column(type="text")
      */
-    private $texte;
+    private $text;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $localisation;
+    private $position;
 
+
+    /**
+     * Fonction qui permet de récupérer l'id du contenu
+     * 
+     * @return id
+     */
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getTexte(): ?string
+
+
+    /**
+     * Fonction qui permet de récupérer le texte du contenu
+     * 
+     * @return text
+     */
+    public function getText(): ?string
     {
-        return $this->texte;
+        return $this->text;
     }
 
-    public function setTexte(string $texte): self
+
+    /**
+     * Fonction qui permet de changer la valeur du texte du contenu
+     * 
+     * @param string $text le nom du contenu
+     * 
+     * @return text
+     */
+    public function setText(string $text): self
     {
-        $this->texte = $texte;
+        $this->text = $text;
 
         return $this;
     }
 
-    public function getLocalisation(): ?string
+    /**
+     * Fonction qui permet de récuperer la valeur de la position du contenu
+     * 
+     * @return position
+     */
+    public function getPosition(): ?string
     {
-        return $this->localisation;
+        return $this->position;
     }
 
-    public function setLocalisation(string $localisation): self
+
+    /**
+     * Fonction qui permet de changer la valeur de la position du contenu
+     * 
+     * @param string $position le nom du contenu
+     * 
+     * @return position
+     */
+    public function setPosition(string $position): self
     {
-        $this->localisation = $localisation;
+        $this->position = $position;
 
         return $this;
     }
