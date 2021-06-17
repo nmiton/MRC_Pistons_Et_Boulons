@@ -19,22 +19,16 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 
 		<!-- SASS compilé -->
-		<link
-		rel="stylesheet" href="{{ asset('css/style.min.css') }}"/>
-
-		{# {% for message in app.flashes('success') %}
-            <div class="alert alert-success">
-                {{message}}
-            </div>
-        {% endfor %} #}
+		<link rel="stylesheet" href="{{ asset('css/style.min.css') }}"/>
+		{# <link rel="stylesheet" href="{{ asset('../public/css/style.min.css') }}"/> #}
 
 		<!-- Scripts JS -->
 		<script src={{asset('js/jquery.min.js') }} defer></script>
 		<script src={{asset('js/jquery.dropotron.min.js') }} defer></script>
-		<script src={{asset('/js/browser.min.js') }} defer></script>
+		<script src={{asset('js/browser.min.js') }} defer></script>
 		<script src={{asset('js/breakpoints.min.js') }} defer></script>
-		<script src={{asset('../js/util.js') }} defer></script>
-		<script src={{asset('../js/main_tp.js') }} defer></script>
+		<script src={{asset('js/util.js') }} defer></script>
+		<script src={{asset('js/main_tp.js') }} defer></script>
         <!-- 
         <script src="../js/jquery.min.js" defer></script>
 		<script src="../js/jquery.dropotron.min.js" defer></script>
@@ -46,7 +40,7 @@
 	</head>
 	<body class="is-preload homepage">
 
-
+		{# <div> #}
 	
 
 			{% include 'layout/header.twig' %}
@@ -59,13 +53,19 @@
 
 			<div id="page-wrapper">
 			
-			{% block body %}
-			
-			{% endblock %}
+				{% block body %}
 
-			<div>
+					{# {% for message in app.flashes('success') %}
+						<div class="alert alert-success">
+							{{message}}
+						</div>
+					{% endfor %} #}
+				
+				{% endblock %}
+
+			</div>
 
 
-		</divW>
+		{# </div> #}
 	</body>
 </html>

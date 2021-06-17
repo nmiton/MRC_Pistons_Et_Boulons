@@ -36,6 +36,21 @@ class CollaborateurRepository extends ServiceEntityRepository
     }
     */
 
+    // SELECT DISTINCT Collaborateur.nom  FROM Collaborateur WHERE isAdmin != 1 ORDER BY Collaborateur.id ASC
+    /*
+    public function findByAllCollaborateur()
+    {
+        return $this->createQueryBuilder('c')
+            ->select('c.nom')
+            ->andWhere('c.isAdmin != 1')
+            ->orderBy('c.nom', 'ASC')
+            ->distinct('p.nom')
+            ->getQuery()
+            ->getResult()
+        ;
+    }
+    */
+
     /*
     public function findOneBySomeField($value): ?Collaborateur
     {

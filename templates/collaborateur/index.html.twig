@@ -8,24 +8,25 @@
     <table class="table">
         <thead>
             <tr>
-                <th>Id</th>
+                {# <th>Id</th> #}
                 <th>Nom</th>
-                <th>Prenom</th>
-                <th>DateNaissance</th>
-                <th>DateEntreeEntreprise</th>
-                <th>NumSecuriteSocial</th>
-                <th>TypeContrat</th>
-                <th>DateHeureDerniereConnexion</th>
-                <th>DureeTravailHebdo</th>
+                <th>Prénom</th>
+                <th>Date de naissance</th>
+                <th>Date d'entrée en entreprise</th>
+                <th>Num. Sécurité Sociale</th>
+                <th>Type de contrat</th>
+                <th>Date/heure dernière connexion</th>
+                <th>Durée travail hebdo.</th>
                 <th>Login</th>
-                <th>MotDePasse</th>
+                <th>Mot de passe</th>
+                {# <th>Est admin</th> #}
                 <th>actions</th>
             </tr>
         </thead>
         <tbody>
         {% for collaborateur in collaborateurs %}
             <tr>
-                <td>{{ collaborateur.id }}</td>
+                {# <td>{{ collaborateur.id }}</td> #}
                 <td>{{ collaborateur.nom }}</td>
                 <td>{{ collaborateur.prenom }}</td>
                 <td>{{ collaborateur.dateNaissance ? collaborateur.dateNaissance|date('Y-m-d') : '' }}</td>
@@ -36,14 +37,15 @@
                 <td>{{ collaborateur.dureeTravailHebdo }}</td>
                 <td>{{ collaborateur.login }}</td>
                 <td>{{ collaborateur.motDePasse }}</td>
+                {# <td>{{ collaborateur.isAdmin ? 'Oui' : 'Non' }}</td> #}
                 <td>
-                    <a href="{{ path('collaborateur_show', {'id': collaborateur.id}) }}">show</a>
-                    <a href="{{ path('collaborateur_edit', {'id': collaborateur.id}) }}">edit</a>
+                    <a href="{{ path('collaborateur_show', {'id': collaborateur.id}) }}">Afficher</a>
+                    <a href="{{ path('collaborateur_edit', {'id': collaborateur.id}) }}">Modifier</a>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="12">Aucun collaborateur</td>
+                <td colspan="13">Aucun collaborateur</td>
             </tr>
         {% endfor %}
         </tbody>

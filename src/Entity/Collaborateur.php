@@ -67,6 +67,11 @@ class Collaborateur
      */
     private $motDePasse;
 
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $isAdmin;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -188,6 +193,18 @@ class Collaborateur
     public function setMotDePasse(string $motDePasse): self
     {
         $this->motDePasse = $motDePasse;
+
+        return $this;
+    }
+
+    public function getIsAdmin(): ?bool
+    {
+        return $this->isAdmin;
+    }
+
+    public function setIsAdmin(bool $isAdmin): self
+    {
+        $this->isAdmin = $isAdmin;
 
         return $this;
     }
