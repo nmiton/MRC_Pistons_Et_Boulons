@@ -14,6 +14,16 @@ use Doctrine\Persistence\ManagerRegistry;
  */
 class CollaborateurRepository extends ServiceEntityRepository
 {
+
+    /**
+     * Fonction qui est le constructeur de la classe CollaborateurRepository
+     * 
+     * Cette fonction permet de contruire l'objet CollaborateurRepository en reprenant les fonctions de sa classe parent qui est ServiceEntityRepository
+     * 
+     * @param ManagerRegistry $registry 
+     * 
+     * @return void
+     */
     public function __construct(ManagerRegistry $registry)
     {
         parent::__construct($registry, Collaborateur::class);
