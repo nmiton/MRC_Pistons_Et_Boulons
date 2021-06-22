@@ -4,12 +4,14 @@ namespace App\Entity;
 
 use App\Repository\CollaborateurRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Component\Serializer\Serializable;
 
 /**
  * @ORM\Entity(repositoryClass=CollaborateurRepository::class)
  */
-class Collaborateur
+class Collaborateur implements UserInterface
 {
     /**
      * @ORM\Id
@@ -127,6 +129,12 @@ class Collaborateur
      * @ORM\Column(type="boolean", nullable=true)
      */
     private $isAdmin;
+
+     /**
+     * @ORM\Column(type="boolean", nullable=true)
+     * 
+     */
+    private $isActif;
 
     public function getId(): ?int
     {
@@ -265,7 +273,81 @@ class Collaborateur
         return $this;
     }
 
+     /**
+     * Fonction qui permet de récupérer si le collabo est actif ou pas
+     * 
+     * @return isActif
+     */
+    public function getIsActif(): ?bool
+    {
+        return $this->isActif;
+    }
+
+    /**
+     * Fonction qui permet de changer la valeur de l'activité du collabo
+     * 
+     * @param bool $isActif
+     * 
+     * @return isActif
+     */
+    public function setIsActif(?bool $isActif): self
+    {
+        $this->isActif = $isActif;
+
+        return $this;
+    }
+
     public function getCollaborateur(){
         return $this->nom .' '. $this->prenom;
+    }
+
+  
+
+    public function getRoles()
+    {
+
+        $isAdmin = $this->getIsAdmin();
+        if($isAdmin){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+    public function getPassword()
+    {
+        return $this->motDePasse;
+    }
+
+    public function getSalt()
+    {
+        
+    }
+
+    public function getUsername()
+    {
+        return $this->login;
+    }
+
+    public function eraseCredentials()
+    {
+    }
+
+    public function isEqualTo(UserInterface $user)
+    {
+    
+        if ($this->password !== $user->getPassword()) {
+            return false;
+        }
+
+        if ($this->salt !== $user->getSalt()) {
+            return false;
+        }
+
+        if ($this->username !== $user->getUsername()) {
+            return false;
+        }
+
+        return true;
     }
 }

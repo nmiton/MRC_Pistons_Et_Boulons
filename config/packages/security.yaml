@@ -1,14 +1,37 @@
 security:
+    encoder:
+        class : App\Entity\Collaborateur
+        algorithm : bcrypt
     # https://symfony.com/doc/current/security.html#where-do-users-come-from-user-providers
     providers:
         users_in_memory: { memory: null }
+        in_database:
+            entity:
+                class: App\Entity\Collaborateur
+                property : login
     firewalls:
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
         main:
             anonymous: lazy
-            provider: users_in_memory
+            provider: in_database
+            guard:
+                authenticators:
+                    - App\Security\CollaborateurAuthenticator
+            logout:
+                path: app_logout
+                # where to redirect after logout
+                target: accueil
+
+            form_login:
+                login_path: app_login
+                check_path : app_login
+     
+
+
+
+               
 
             # activate different ways to authenticate
             # https://symfony.com/doc/current/security.html#firewalls-authentication
