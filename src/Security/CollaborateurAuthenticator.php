@@ -30,12 +30,12 @@ class CollaborateurAuthenticator extends AbstractFormLoginAuthenticator
     private $csrfTokenManager;
     private $encoder;
 
-    public function __construct(EntityManagerInterface $entityManager, UrlGeneratorInterface $urlGenerator, CsrfTokenManagerInterface $csrfTokenManager, UserPasswordEncoderInterface $encoder)
+    public function __construct(EntityManagerInterface $entityManager, UrlGeneratorInterface $urlGenerator, CsrfTokenManagerInterface $csrfTokenManager, UserPasswordEncoderInterface $passwordEncoder)
     {
         $this->entityManager = $entityManager;
         $this->urlGenerator = $urlGenerator;
         $this->csrfTokenManager = $csrfTokenManager;
-        $this->encoder = $encoder;
+        $this->passwordEncoder = $passwordEncoder;
     }
 
     public function supports(Request $request)
@@ -77,18 +77,8 @@ class CollaborateurAuthenticator extends AbstractFormLoginAuthenticator
 
     public function checkCredentials($credentials, UserInterface $user)
     {
-        // check credentials - e.g. make sure the password is valid
-        // return true to cause authentication success
-
-      
-        $encoded =  $this->encoder->encodePassword($user, $credentials["password"]);
-
-        $password = $user->getPassword();
-
-        if($encoded == $password){
-            return true;
-        }
-        return false;
+        $param = $this->passwordEncoder->isPasswordValid($user, $credentials['password']);
+        return $param;
     }
 
     public function onAuthenticationSuccess(Request $request, TokenInterface $token, $providerKey)

@@ -44,7 +44,7 @@ class CollaborateurController extends AbstractController
        
         if ($form->isSubmitted() && $form->isValid()) {
             // $collaborateur = $this->register($encoder, $collaborateur);
-            $collaborateur = $collaborateur->setMotDePasse( $this->encoder->encodePassword( $collaborateur, $collaborateur->getPassword() ) );
+            $collaborateur->setMotDePasse( $this->encoder->encodePassword( $collaborateur, $collaborateur->getPassword() ) );
             $collaborateur->setRoles(array('ROLE_USER'));
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($collaborateur);
